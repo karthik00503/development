@@ -36,3 +36,9 @@ jobs:
         run: |
           ls ${{ runner.tool_cache }}
       - run: echo "The job's status is ${{ job.status }}."
+  second-Job:
+    name: Testing the Second Job
+    runs-on: ubuntu-latest
+    needs: Example-Actions-Job
+    steps:
+      - run: echo " The Job is running on the ${{runner.os}}."
